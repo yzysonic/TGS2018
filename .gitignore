@@ -14,9 +14,9 @@
 *.userprefs
 
 # Build results
-Mikoshikagura/[Dd]ebug/
+TGS2018/[Dd]ebug/
 [Dd]ebugPublic/
-Mikoshikagura/[Rr]elease/
+TGS2018/[Rr]elease/
 [Rr]eleases/
 x64/
 x86/

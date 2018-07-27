@@ -457,7 +457,7 @@ void Player::StateAir::OnEnter(void)
 	this->player->SetAnimation("Fall");
 	if ((this->player->rigidbody->velocity.y > 0.0f) && this->player->jump_timer.TimeUp())
 	{
-		this->player->jump_sounds[Random(0, this->player->jump_sounds.size() - 1)]->Play();
+		//this->player->jump_sounds[Random(0, this->player->jump_sounds.size() - 1)]->Play();
 		this->player->jump_timer.Reset(2.0f);
 	}
 }

@@ -11,11 +11,7 @@
 void SceneYangTest::Init(void)
 {
 	// リソースのロード
-	ModelData::Load("field_summer");
-	ModelData::Load("field_winter");
-	Texture::Load("mushroom");
-	Texture::Load("particle");
-	Sound::Load("bgm_demo");
+	ModelData::Load("field");
 
 	// オブジェクト初期化
 	player	= new Player;
@@ -69,12 +65,7 @@ void SceneYangTest::Update(void)
 void SceneYangTest::Uninit(void)
 {
 	Renderer::GetInstance()->setCamera(nullptr);
-
-	ModelData::Release("field_summer");
-	ModelData::Release("field_winter");
-	Texture::Release("mushroom");
-	Texture::Release("snow");
-	Sound::Release("bgm_demo");
+	ModelData::Release("field");
 
 }
 
@@ -93,16 +84,6 @@ TestObject::TestObject(void)
 
 void TestObject::Update(void)
 {
-	ImGui::Begin("BoxCollision");
-
-	if (collide)
-		ImGui::Text("atari!");
-	else
-		ImGui::Text("none");
-
-	ImGui::End();
-
-	collide = false;
 }
 
 void TestObject::OnCollisionEnter(Object * other)
