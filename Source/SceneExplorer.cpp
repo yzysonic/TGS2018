@@ -4,6 +4,7 @@
 
 #include "SceneImGuiTest.h"
 #include "SceneYangTest.h"
+#include "SceneHaraTest.h"
 void SceneExplorer::Init(void)
 {
 	columns = 3;
@@ -23,6 +24,7 @@ void SceneExplorer::Init(void)
 	//ÉVÅ[ÉìÇÃìoò^
 	AddScene<SceneImGuiTest>();
 	AddScene<SceneYangTest>();
+	AddScene<SceneHaraTest>();
 	FadeScreen::FadeIn(Color::black, 0.0f);
 }
 

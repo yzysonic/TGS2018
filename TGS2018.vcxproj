@@ -216,6 +216,7 @@
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\SceneExplorer.h" />
     <ClInclude Include="Source\SceneGlobal.h" />
+    <ClInclude Include="Source\SceneHaraTest.h" />
     <ClInclude Include="Source\SceneImGuiTest.h" />
     <ClInclude Include="Source\SceneYangTest.h" />
     <ClInclude Include="Source\Snapshot.h" />
@@ -285,6 +286,7 @@
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\SceneExplorer.cpp" />
     <ClCompile Include="Source\SceneGlobal.cpp" />
+    <ClCompile Include="Source\SceneHaraTest.cpp" />
     <ClCompile Include="Source\SceneImGuiTest.cpp" />
     <ClCompile Include="Source\SceneYangTest.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
