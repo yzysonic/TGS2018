@@ -37,7 +37,7 @@ int APIENTRY WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #endif
 
 	// タイトル
-	SystemParameters::windowTitle = "MIKOSHIKAGURA";
+	SystemParameters::windowTitle = "TGS 2018";
 
 	// システム初期化
 	if (FAILED(System::Init()))

@@ -29,14 +29,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -58,15 +58,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Directx9Debug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Directx9Release32.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Directx9Debug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Directx9Debug.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -87,7 +91,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;IMGUI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,6 +146,148 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\CameraPlay.h" />
+    <ClInclude Include="Source\CameraSmoothFollow.h" />
+    <ClInclude Include="Source\CameraSphericalCoordinate.h" />
+    <ClInclude Include="Source\Core\AllocateHirerachy.h" />
+    <ClInclude Include="Source\Core\Billboard.h" />
+    <ClInclude Include="Source\Core\BoneFrame.h" />
+    <ClInclude Include="Source\Core\Camera.h" />
+    <ClInclude Include="Source\Core\Collider.h" />
+    <ClInclude Include="Source\Core\Collision.h" />
+    <ClInclude Include="Source\Core\Color.h" />
+    <ClInclude Include="Source\Core\Common.h" />
+    <ClInclude Include="Source\Core\Component.h" />
+    <ClInclude Include="Source\Core\Core.h" />
+    <ClInclude Include="Source\Core\Direct3D.h" />
+    <ClInclude Include="Source\Core\Drawable.h" />
+    <ClInclude Include="Source\Core\Easing.h" />
+    <ClInclude Include="Source\Core\Event.h" />
+    <ClInclude Include="Source\Core\Game.h" />
+    <ClInclude Include="Source\Core\GameManager.h" />
+    <ClInclude Include="Source\Core\Input.h" />
+    <ClInclude Include="Source\Core\Layer.h" />
+    <ClInclude Include="Source\Core\Lerp.h" />
+    <ClInclude Include="Source\Core\Math.h" />
+    <ClInclude Include="Source\Core\ModelData.h" />
+    <ClInclude Include="Source\Core\Object.h" />
+    <ClInclude Include="Source\Core\ObjectManager.h" />
+    <ClInclude Include="Source\Core\ObjectType.h" />
+    <ClInclude Include="Source\Core\ParticleSystem.h" />
+    <ClInclude Include="Source\Core\PerlinNoise.h" />
+    <ClInclude Include="Source\Core\Physics.h" />
+    <ClInclude Include="Source\Core\Polygon.h" />
+    <ClInclude Include="Source\Core\Random.h" />
+    <ClInclude Include="Source\Core\Renderer.h" />
+    <ClInclude Include="Source\Core\RendererType.h" />
+    <ClInclude Include="Source\Core\RenderSpace.h" />
+    <ClInclude Include="Source\Core\RenderTarget.h" />
+    <ClInclude Include="Source\Core\Resource.h" />
+    <ClInclude Include="Source\Core\Rigidbody.h" />
+    <ClInclude Include="Source\Core\Scene.h" />
+    <ClInclude Include="Source\Core\Script.h" />
+    <ClInclude Include="Source\Core\Shader.h" />
+    <ClInclude Include="Source\Core\Singleton.h" />
+    <ClInclude Include="Source\Core\SkinnedModel.h" />
+    <ClInclude Include="Source\Core\Sound.h" />
+    <ClInclude Include="Source\Core\SoundPlayer.h" />
+    <ClInclude Include="Source\Core\StaticModel.h" />
+    <ClInclude Include="Source\Core\System.h" />
+    <ClInclude Include="Source\Core\Text.h" />
+    <ClInclude Include="Source\Core\Texture.h" />
+    <ClInclude Include="Source\Core\Time.h" />
+    <ClInclude Include="Source\Core\Transform.h" />
+    <ClInclude Include="Source\Core\Vector.h" />
+    <ClInclude Include="Source\Core\Window.h" />
+    <ClInclude Include="Source\DebugManager.h" />
+    <ClInclude Include="Source\DebugMenu.h" />
+    <ClInclude Include="Source\FadeScreen.h" />
+    <ClInclude Include="Source\FreeCamera.h" />
+    <ClInclude Include="Source\Imgui\imconfig.h" />
+    <ClInclude Include="Source\Imgui\imgui.h" />
+    <ClInclude Include="Source\Imgui\ImGuiImpl.h" />
+    <ClInclude Include="Source\Imgui\imgui_internal.h" />
+    <ClInclude Include="Source\Inspector.h" />
+    <ClInclude Include="Source\InspectorContentCamera.h" />
+    <ClInclude Include="Source\InspectorContentPlayer.h" />
+    <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\MainCamera.h" />
+    <ClInclude Include="Source\ObjectExplorer.h" />
+    <ClInclude Include="Source\Player.h" />
+    <ClInclude Include="Source\SceneExplorer.h" />
+    <ClInclude Include="Source\SceneGlobal.h" />
+    <ClInclude Include="Source\SceneImGuiTest.h" />
+    <ClInclude Include="Source\SceneYangTest.h" />
+    <ClInclude Include="Source\Snapshot.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CameraPlay.cpp" />
+    <ClCompile Include="Source\CameraSmoothFollow.cpp" />
+    <ClCompile Include="Source\CameraSphericalCoordinate.cpp" />
+    <ClCompile Include="Source\Core\AllocateHirerachy.cpp" />
+    <ClCompile Include="Source\Core\Billboard.cpp" />
+    <ClCompile Include="Source\Core\BoneFrame.cpp" />
+    <ClCompile Include="Source\Core\Camera.cpp" />
+    <ClCompile Include="Source\Core\Collider.cpp" />
+    <ClCompile Include="Source\Core\Collision.cpp" />
+    <ClCompile Include="Source\Core\Color.cpp" />
+    <ClCompile Include="Source\Core\Common.cpp" />
+    <ClCompile Include="Source\Core\Component.cpp" />
+    <ClCompile Include="Source\Core\Direct3D.cpp" />
+    <ClCompile Include="Source\Core\Drawable.cpp" />
+    <ClCompile Include="Source\Core\Easing.cpp" />
+    <ClCompile Include="Source\Core\Event.cpp" />
+    <ClCompile Include="Source\Core\Game.cpp" />
+    <ClCompile Include="Source\Core\GameManager.cpp" />
+    <ClCompile Include="Source\Core\Input.cpp" />
+    <ClCompile Include="Source\Core\Lerp.cpp" />
+    <ClCompile Include="Source\Core\ModelData.cpp" />
+    <ClCompile Include="Source\Core\Object.cpp" />
+    <ClCompile Include="Source\Core\ObjectManager.cpp" />
+    <ClCompile Include="Source\Core\ParticleSystem.cpp" />
+    <ClCompile Include="Source\Core\PerlinNoise.cpp" />
+    <ClCompile Include="Source\Core\Physics.cpp" />
+    <ClCompile Include="Source\Core\Polygon.cpp" />
+    <ClCompile Include="Source\Core\Random.cpp" />
+    <ClCompile Include="Source\Core\Renderer.cpp" />
+    <ClCompile Include="Source\Core\RenderSpace.cpp" />
+    <ClCompile Include="Source\Core\RenderTarget.cpp" />
+    <ClCompile Include="Source\Core\Rigidbody.cpp" />
+    <ClCompile Include="Source\Core\Scene.cpp" />
+    <ClCompile Include="Source\Core\Script.cpp" />
+    <ClCompile Include="Source\Core\Shader.cpp" />
+    <ClCompile Include="Source\Core\SkinnedModel.cpp" />
+    <ClCompile Include="Source\Core\Sound.cpp" />
+    <ClCompile Include="Source\Core\SoundPlayer.cpp" />
+    <ClCompile Include="Source\Core\StaticModel.cpp" />
+    <ClCompile Include="Source\Core\System.cpp" />
+    <ClCompile Include="Source\Core\Text.cpp" />
+    <ClCompile Include="Source\Core\Texture.cpp" />
+    <ClCompile Include="Source\Core\Time.cpp" />
+    <ClCompile Include="Source\Core\Transform.cpp" />
+    <ClCompile Include="Source\Core\Vector.cpp" />
+    <ClCompile Include="Source\Core\Window.cpp" />
+    <ClCompile Include="Source\DebugManager.cpp" />
+    <ClCompile Include="Source\DebugMenu.cpp" />
+    <ClCompile Include="Source\FadeScreen.cpp" />
+    <ClCompile Include="Source\FreeCamera.cpp" />
+    <ClCompile Include="Source\Imgui\imgui.cpp" />
+    <ClCompile Include="Source\Imgui\ImGuiImpl.cpp" />
+    <ClCompile Include="Source\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="Source\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="Source\Inspector.cpp" />
+    <ClCompile Include="Source\InspectorContentCamera.cpp" />
+    <ClCompile Include="Source\InspectorContentPlayer.cpp" />
+    <ClCompile Include="Source\Light.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\MainCamera.cpp" />
+    <ClCompile Include="Source\ObjectExplorer.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\SceneExplorer.cpp" />
+    <ClCompile Include="Source\SceneGlobal.cpp" />
+    <ClCompile Include="Source\SceneImGuiTest.cpp" />
+    <ClCompile Include="Source\SceneYangTest.cpp" />
+    <ClCompile Include="Source\Snapshot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

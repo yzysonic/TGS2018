@@ -1,7 +1,5 @@
 #include "Player.h"
 #include "Core/Physics.h"
-#include "Holdable.h"
-#include "SeasonManager.h"
 
 #ifdef _DEBUG
 #include "InspectorContentPlayer.h"
@@ -40,11 +38,11 @@ Player::Player(void)
 	this->skill_sound = Sound::Get("player_skill");
 
 	// 足音初期化
-	this->foot_sounds = Sound::GetSerial( (SeasonManager::GetSeason() == SeasonType::Summer) ? "foot_mud" : "foot_snow");
+	//this->foot_sounds = Sound::GetSerial("foot_mud");
 
 	this->PlayFootSound = [this]
 	{
-		foot_sounds[Random(0, foot_sounds.size() - 1)]->Play();
+		//foot_sounds[Random(0, foot_sounds.size() - 1)]->Play();
 	};
 
 	// 足音のアニメーションイベント登録
@@ -99,7 +97,6 @@ Player::Player(void)
 	this->state[(int)StateName::Air		].reset(new StateAir(this));
 	this->state[(int)StateName::Action	].reset(new StateAction(this));
 	this->action_state = this->state[3].get();
-	this->state[(int)StateName::SeasonChange	].reset(new StateSeasonChange(this));
 	this->current_state = this->state[(int)StateName::Idle].get();
 
 #ifdef _DEBUG
@@ -127,45 +124,6 @@ void Player::Uninit(void)
 
 void Player::OnCollisionEnter(Object * other)
 {
-	if (other->type == ObjectType::Item && !this->action_enter)
-	{
-		auto item = other->GetComponent<Holdable>();
-
-		// ものを拾う
-		this->action_enter = [item, this]
-		{
-			SetAnimation("Pick", false);
-			this->rigidbody->velocity.x = 0.0f;
-
-			// ものを放つ
-			this->action_enter = [item, this]
-			{
-				item->SetOwner(nullptr);
-				this->is_holding_item = false;
-				this->action_enter = nullptr;
-				this->action_update = nullptr;
-				this->action_exit = nullptr;
-
-				this->current_state->SetState(StateName::Idle);
-			};
-
-		};
-
-		this->action_update = [item, this]
-		{
-			this->anime_timer++;
-			if (!this->is_holding_item && this->anime_timer.Elapsed() > 0.833f)
-			{
-				this->is_holding_item = true;
-				item->offset_y = this->collider->size.y + 0.5f*item->object->GetComponent<BoxCollider2D>()->size.y + 2.0f;
-				item->SetOwner(&this->transform);
-			}
-			if (this->anime_timer.TimeUp())
-			{
-				this->current_state->SetState(StateName::Idle);
-			}
-		};
-	}
 }
 
 void Player::OnCollisionStay(Object * other)
@@ -252,16 +210,6 @@ void Player::OnCollisionExit(Object * other)
 		}
 	}
 	
-}
-
-void Player::SetSummer(void)
-{
-	this->foot_sounds = Sound::GetSerial("foot_mud");
-}
-
-void Player::SetWinter(void)
-{
-	this->foot_sounds = Sound::GetSerial("foot_snow");
 }
 
 void Player::SetPosition(Vector3 pos)
@@ -416,7 +364,6 @@ void Player::StateMove::OnEnter(void)
 void Player::StateMove::Update(void)
 {
 	this->player->anime_timer++;
-	auto animset = (ID3DXKeyframedAnimationSet*)this->player->model->GetCurrentAnimation();
 	if (this->player->is_grounded)
 	{
 		if (!this->player->JumpControl())
@@ -471,7 +418,7 @@ void Player::StateMove::SetRunning(void)
 
 #pragma region StateAction
 //=============================================================================
-// StateAttack
+// StateAction
 //=============================================================================
 void Player::StateAction::OnEnter(void)
 {
@@ -550,37 +497,4 @@ void Player::StateAir::SetState(StateName state)
 	}
 }
 
-#pragma endregion
-
-#pragma region StateWhistle
-void Player::StateSeasonChange::OnEnter(void)
-{
-	this->player->SetAnimation("SeasonChange", false);
-	this->player->rigidbody->velocity.x = 0.0f;
-	this->player->skill_sound->Play();
-	change = false;
-}
-
-void Player::StateSeasonChange::Update(void)
-{
-	this->player->anime_timer++;
-
-	if (!change && this->player->anime_timer.Elapsed() > 0.8f)
-	{
-		SeasonManager::SwitchSeason([this]
-		{
-			this->SetState(StateName::Idle);
-		});
-
-		this->player->season_change();
-
-		change = true;
-	}
-}
-
-void Player::StateSeasonChange::SetState(StateName state)
-{
-	if(state == StateName::Idle)
-		State::SetState(state);
-}
 #pragma endregion

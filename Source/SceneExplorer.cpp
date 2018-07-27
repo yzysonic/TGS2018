@@ -3,14 +3,7 @@
 #include "FadeScreen.h"
 
 #include "SceneImGuiTest.h"
-#include "SceneTest.h"
-#include "SceneTitle.h"
 #include "SceneYangTest.h"
-#include "SceneStackSample.h"
-#include "Scene_Stage1.h"
-#include "SceneClear.h"
-
-#include "Scene_Stage2.h"
 void SceneExplorer::Init(void)
 {
 	columns = 3;
@@ -29,16 +22,7 @@ void SceneExplorer::Init(void)
 
 	//ÉVÅ[ÉìÇÃìoò^
 	AddScene<SceneImGuiTest>();
-	AddScene<SceneTest>();
 	AddScene<SceneYangTest>();
-	AddScene<SceneStackSample>();
-	AddScene<SceneTitle>();
-
-	AddScene<Scene_Stage1>();
-	AddScene<SceneClear>();
-
-	AddScene<Scene_Stage2>();
-
 	FadeScreen::FadeIn(Color::black, 0.0f);
 }
 

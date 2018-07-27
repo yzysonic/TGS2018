@@ -1,6 +1,5 @@
 #pragma once
 #include "Core/Core.h"
-#include "ISeason.h"
 #include <set>
 
 #define KeyJump			DIK_SPACE
@@ -15,7 +14,7 @@
 #define PlayerSpeed (40.0f)
 #define PlayerJumpSpeed (45.0f)
 
-class Player : public Object, public ISeason
+class Player : public Object
 {
 	friend class InspectorContentPlayer;
 public:
@@ -106,19 +105,6 @@ public:
 		FrameTimer timer;
 	};
 
-	// 吹笛状態
-	class StateSeasonChange : public State
-	{
-	public:
-		StateSeasonChange(Player* player) : State(player) {}
-		void OnEnter(void) override;
-		void Update(void) override;
-		void SetState(StateName state) override;
-		inline const char* ToString(void) override { return "SeasonChange"; }
-	private:
-		bool change;
-	};
-
 #pragma endregion
 
 	// 状態インスタンスリスト
@@ -133,8 +119,6 @@ public:
 	void OnCollisionEnter(Object*  other) override;
 	void OnCollisionStay(Object* other) override;
 	void OnCollisionExit(Object* other) override;
-	void SetSummer(void) override;
-	void SetWinter(void) override;
 	void SetPosition(Vector3 pos);
 
 
