@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+<<<<<<< HEAD
 Debug|Win32|C:\Users\yang.tzui\Source\Repos\TGS2018\|
+=======
+Debug|Win32|C:\Users\harasan\Documents\Visual Studio 2015\Projects\20180728_TGS2018\|
+>>>>>>> fa337760ff0bb5223cb69a25c3bb7c7f52e5fb11
