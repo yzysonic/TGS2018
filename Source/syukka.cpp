@@ -40,12 +40,15 @@ void Syukka::OnCollisionEnter(Object* other) {
 				count = 0;
 			}
 			pamyu = pamyu->follower;
+
 		}
 
 		
 		if (scoreobj != nullptr) {
 			scoreobj->AddScore(score);
 		}
+
+		player->Clearfollower();
 	}
 
 
