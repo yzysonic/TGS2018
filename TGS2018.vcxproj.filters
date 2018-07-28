@@ -253,6 +253,12 @@
     <ClInclude Include="Source\Pamyu.h">
       <Filter>GameObject</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ScoreObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TimerObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Collision.cpp">
@@ -463,6 +469,12 @@
     </ClCompile>
     <ClCompile Include="Source\SceneResult.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ScoreObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TimerObject.cpp">
+      <Filter>GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Source\Pamyu.cpp" />
   </ItemGroup>

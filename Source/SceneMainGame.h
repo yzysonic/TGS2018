@@ -2,6 +2,10 @@
 #include "core\Core.h"
 #include "MainCamera.h"
 
+
+#include"ScoreObject.h"
+#include "TimerObject.h"
+
 class SceneMainGame :public Scene {
 public:
 	void Init(void) override;
@@ -12,7 +16,7 @@ public:
 	MainCamera * camera;
 
 	Object* field;
-	Object* score;
-	Object* time;
+	ScoreObject* score;
+	TimerObject* time;
 
 };

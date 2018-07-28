@@ -223,7 +223,9 @@
     <ClInclude Include="Source\SceneResult.h" />
     <ClInclude Include="Source\SceneTitle.h" />
     <ClInclude Include="Source\SceneYangTest.h" />
+    <ClInclude Include="Source\ScoreObject.h" />
     <ClInclude Include="Source\Snapshot.h" />
+    <ClInclude Include="Source\TimerObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CameraPlay.cpp" />
@@ -297,7 +299,9 @@
     <ClCompile Include="Source\SceneResult.cpp" />
     <ClCompile Include="Source\SceneTitle.cpp" />
     <ClCompile Include="Source\SceneYangTest.cpp" />
+    <ClCompile Include="Source\ScoreObject.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
+    <ClCompile Include="Source\TimerObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
