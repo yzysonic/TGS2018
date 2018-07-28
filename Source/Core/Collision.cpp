@@ -13,8 +13,8 @@ bool CollisionTestAABB2D(Collider * collider_a, Collider * collider_b, Collision
 {
 	const BoxCollider2D* bca = dynamic_cast<BoxCollider2D*>(collider_a);
 	const BoxCollider2D* bcb = dynamic_cast<BoxCollider2D*>(collider_b);
-	const Vector2 &posa = bca->object->transform.position.toVector2()+bca->offset;
-	const Vector2 &posb = bcb->object->transform.position.toVector2()+bcb->offset;
+	const Vector2 &posa = Vector2(bca->object->transform.position.x, bca->object->transform.position.z)+bca->offset;
+	const Vector2 &posb = Vector2(bca->object->transform.position.x, bca->object->transform.position.z)+bcb->offset;
 
 	return	((posa.x - bca->size.x * 0.5f) <= (posb.x + bcb->size.x * 0.5f)) &&
 			((posa.x + bca->size.x * 0.5f) >= (posb.x - bcb->size.x * 0.5f)) &&
