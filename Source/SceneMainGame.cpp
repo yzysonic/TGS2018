@@ -2,14 +2,14 @@
 
 void SceneMainGame::Init(void) {
 
-	Texture::Load("field001");
+	Texture::Load("field_kari");
 	Texture::Load("time");
 	Texture::Load("score");
 	
 	field = new Object;
 
-	field->AddComponent<RectPolygon>("field001");
-	field->GetComponent<RectPolygon>()->SetSize(Vector2(500.f, 500.f));
+	field->AddComponent<RectPolygon>("field_kari");
+	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000, 500));
 	field->transform.setRotation(PI / 2, 0, 0);
 	field->transform.position = Vector3(0.f, 0.f, 0.f);
 	

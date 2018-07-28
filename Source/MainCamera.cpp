@@ -7,8 +7,8 @@ MainCamera::MainCamera(void)
 
 	coordinate	= AddComponent<CameraSphericalCoordinate>();
 
-	coordinate->theta		= 1.444f;
-	coordinate->distance	= 900.0f;
+	coordinate->theta		=  0.5;
+	coordinate->distance	= 600.0f;
 
 
 }

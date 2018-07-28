@@ -52,8 +52,8 @@ D3DXMATRIX Camera::getProjectionMatrix(bool update)
 
 		// プロジェクションマトリクスの作成
 
-		//D3DXMatrixPerspectiveFovLH(&projection, fov, aspect, near_z, far_z);
-		D3DXMatrixOrthoLH(&projection, SystemParameters::ResolutionX, SystemParameters::ResolutionY, near_z, far_z);
+		D3DXMatrixPerspectiveFovLH(&projection, fov, aspect, near_z, far_z);
+		//D3DXMatrixOrthoLH(&projection, SystemParameters::ResolutionX, SystemParameters::ResolutionY, near_z, far_z);
 	}
 
 	return projection;
