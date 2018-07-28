@@ -9,6 +9,8 @@ public:
 
 	void Update(void) override;
 
+	FrameTimer fTimer;	// フレームタイマー
+
 
 	Object* titlelogo;
 
