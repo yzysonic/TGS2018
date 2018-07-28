@@ -18,9 +18,13 @@ public:
 	};
 
 	Billboard *moji;
+	Billboard *body;
 
 	int state;				// 現在の状態（0: 待機, 1:追従follow）
 	PamyuType pamyuType;	// 「ぱ」「み」「ゅ」「その他」
+	FrameTimer ft;
+
+	Object *mojiObj;
 
 	Pamyu *follower;		// 次のぱみゅへのポインタ
 	Pamyu(Vector3 pos, PamyuType pamyu_type);	// 指定位置、指定のタイプでポップ
