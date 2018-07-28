@@ -16,37 +16,37 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 	case PamyuType::Pa:
 		mojiObj = new Object;
 		Texture::Load("pa");
-		moji = mojiObj->AddComponent<Billboard>("pa");
+		moji = mojiObj->AddComponent<Billboard>("pa", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 	case PamyuType::Mi:
 		mojiObj = new Object;
 		Texture::Load("mi");
-		moji = mojiObj->AddComponent<Billboard>("mi");
+		moji = mojiObj->AddComponent<Billboard>("mi", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 	case PamyuType::Yu:
 		mojiObj = new Object;
 		Texture::Load("yu");
-		moji = mojiObj->AddComponent<Billboard>("yu");
+		moji = mojiObj->AddComponent<Billboard>("yu", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 	case PamyuType::Po:
 		mojiObj = new Object;
 		Texture::Load("po");
-		moji = mojiObj->AddComponent<Billboard>("po");
+		moji = mojiObj->AddComponent<Billboard>("po", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 	case PamyuType::Mo:
 		mojiObj = new Object;
 		Texture::Load("mo");
-		moji = mojiObj->AddComponent<Billboard>("mo");
+		moji = mojiObj->AddComponent<Billboard>("mo", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 	case PamyuType::Yo:
 		mojiObj = new Object;
 		Texture::Load("yo");
-		moji = mojiObj->AddComponent<Billboard>("yo");
+		moji = mojiObj->AddComponent<Billboard>("yo", Layer::MASK);
 		moji->SetPattern(0);
 		break;
 
@@ -77,7 +77,7 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 
 Pamyu::~Pamyu()
 {
-	shadow->Destroy();
+	//shadow->Destroy();
 }
 
 void Pamyu::Uninit(void)

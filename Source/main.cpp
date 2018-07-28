@@ -9,6 +9,7 @@
 #include "Core/Game.h"
 #include "Core/GameManager.h"
 #include "SceneGlobal.h"
+#include "SceneTitle.h"
 
 #ifndef _DEBUG
 #include "SceneTitle.h"
@@ -63,7 +64,7 @@ int APIENTRY WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 #ifndef _DEBUG
 	GameManager::GetInstance()->SetScene(new SceneTitle);
 #else
-	GameManager::GetInstance()->SetScene(new SceneExplorer);
+	GameManager::GetInstance()->SetScene(new SceneTitle);
 #endif
 
 	// ƒQ[ƒ€ƒ‹[ƒv

@@ -20,7 +20,7 @@ Player::Player(Vector3 pos)
 	billboard = AddComponent<Billboard>("pamyu_pink_move_back");
 	billboard->SetPattern(0);
 	collider = AddComponent<SphereCollider>();
-	collider->radius = 10.0f;
+	collider->radius = 20.0f;
 
 	shadow = new Shadow(this);
 

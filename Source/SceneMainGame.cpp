@@ -24,10 +24,10 @@ void SceneMainGame::Init(void) {
 
 	charaDisp = new CharacterDisplayer;
 
-	house = new Object;
-	house->AddComponent<Billboard>("house");
-	house->transform.position = Vector3(400.f, 100.f, 0.f);
-	house->transform.scale = Vector3(100, 100, 100);
+	//house = new Object;
+	//house->AddComponent<Billboard>("house");
+	//house->transform.position = Vector3(400.f, 100.f, 0.f);
+	//house->transform.scale = Vector3(100, 100, 100);
 
 	// ƒJƒƒ‰‰Šú‰»
 	camera = new MainCamera;
@@ -63,7 +63,7 @@ void SceneMainGame::Update(void) {
 	if (time->TimerEnd()) {
 
 		gamescore = score->GetScore();
-		//GameManager::GetInstance()->SetScene(new SceneResult);
+		GameManager::GetInstance()->SetScene(new SceneResult);
 	}
 
 }
