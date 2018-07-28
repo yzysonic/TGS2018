@@ -2,9 +2,11 @@
 #include "core\Core.h"
 #include "MainCamera.h"
 
-
 #include"ScoreObject.h"
 #include "TimerObject.h"
+#include "syukka.h"
+#include "Player.h"
+#include "PamyuManager.h"
 
 class SceneMainGame :public Scene {
 public:
@@ -20,9 +22,10 @@ public:
 	TimerObject* time;
 
 	Object* house;
-	Object* syukka;
+	Syukka* syukka;
 
-
+	Player* player;
+	PamyuManager* pm;
 
 	static int gamescore;
 };

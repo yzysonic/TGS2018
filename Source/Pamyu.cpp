@@ -9,6 +9,8 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 	collider = AddComponent<SphereCollider>();
 	collider->radius = 10.0f;
 
+	shadow = new Shadow(this);
+
 	switch (pamyu_type)
 	{
 	case PamyuType::Pa:
@@ -49,7 +51,7 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 		break;
 
 	}
-
+	moji->SetOpacity(0.6f);
 	//moji = AddComponent<Billboard>
 	 
 
@@ -75,6 +77,7 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 
 Pamyu::~Pamyu()
 {
+	shadow->Destroy();
 }
 
 void Pamyu::Uninit(void)

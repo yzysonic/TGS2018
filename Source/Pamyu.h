@@ -1,5 +1,6 @@
 #pragma once
 #include "core\Core.h"
+#include "Shadow.h"
 #include <queue>
 
 class Pamyu :public Object
@@ -20,6 +21,7 @@ public:
 	Billboard *moji;
 	Billboard *body;
 	SphereCollider * collider;
+	Shadow * shadow;
 
 	int state;				// 現在の状態（0: 待機, 1:追従follow）
 	PamyuType pamyuType;	// 「ぱ」「み」「ゅ」「その他」

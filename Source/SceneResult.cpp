@@ -2,32 +2,39 @@
 #include "SceneTitle.h"
 #include "Core\Text.h"
 #include "SceneMainGame.h"
-void SceneResult::Init(void) {
+#include "FadeScreen.h"
 
+void SceneResult::Init(void)
+{
+	Texture::Load("result_background");
 
+	result = new Object;
+	result->AddComponent<RectPolygon2D>("result_background", Layer::BG_00);
 
-	score = new Object;
-	
-	score->AddComponent<Text>()->LoadFont("おつとめフォント");
-	score->GetComponent<Text>()->SetSize(100.f, 80.f);
-	score->GetComponent<Text>()->area = { 30,0,SystemParameters::ResolutionX,SystemParameters::ResolutionY };
-	score->GetComponent<Text>()->SetFormat(DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+	result->AddComponent<Text>()->LoadFont("おつとめフォント");
+	result->GetComponent<Text>()->SetSize(100, 0);
+	result->GetComponent<Text>()->area = { 750,300,1025,500 };
+	result->GetComponent<Text>()->SetFormat(DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+	result->GetComponent<Text>()->SetColor(Color::black);
 
-	score->GetComponent<Text>()->SetColor(Color::black);
-
+	next_scene = false;
+	FadeScreen::FadeIn(Color::white, 1.0f);
 }
 
-void SceneResult::Uninit(void) {
+void SceneResult::Uninit(void)
+{
+	Texture::Release("result_background");
 }
 
-void SceneResult::Update(void) {
+void SceneResult::Update(void)
+{
+	result->GetComponent<Text>()->SetText(std::to_string(SceneMainGame::gamescore));
 
-
-	score->GetComponent<Text>()->SetText(std::to_string(SceneMainGame::gamescore));
-
-
-	if (GetKeyboardTrigger(DIK_RETURN))
+	if (!next_scene && GetKeyboardTrigger(DIK_RETURN))
 	{
-		GameManager::GetInstance()->SetScene(new SceneTitle);
+		FadeScreen::FadeOut(Color::black, 1.0f, [this] {
+			GameManager::GetInstance()->SetScene(new SceneTitle);
+		});
+		next_scene = true;
 	}
 }

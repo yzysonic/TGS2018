@@ -25,7 +25,6 @@ void SceneYangTest::Init(void)
 	// ƒJƒƒ‰‰Šú‰»
 	camera = new MainCamera;
 	camera->SetTarget(&player->transform);
-	camera->setBackColor(0xC1CED3);
 
 	// ƒŒƒ“ƒ_ƒŠƒ“ƒOÝ’è
 	Renderer::GetInstance()->setCamera(camera);
@@ -53,7 +52,7 @@ void SceneYangTest::Update(void)
 {
 	if (time->TimerEnd()) {
 
-		GameManager::SetGameScore(score->GetScore());
+		//GameManager::SetGameScore(score->GetScore());
 		//GameManager::GetInstance()->SetScene(new SceneResult);
 	}
 

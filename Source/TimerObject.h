@@ -1,7 +1,7 @@
 #pragma once
 #include "Core/Core.h"
 
-class TimerObject :public Camera {
+class TimerObject :public Object {
 public:
 
 	TimerObject();

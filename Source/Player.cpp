@@ -5,11 +5,19 @@ Player::Player(Vector3 pos)
 	name = "Player";
 	type = ObjectType::Player;
 
-	Texture::Load("player")->SetDivision(6, 5);
+	Texture::Load("pamyu_pink_move_back")->SetDivision(6, 5);
+	Texture::Load("pamyu_pink_move_front")->SetDivision(6, 5);
+	Texture::Load("pamyu_pink_move_left")->SetDivision(6, 5);
+	Texture::Load("pamyu_pink_move_right")->SetDivision(6, 5);
+
+	texture[0] = Texture::Get("pamyu_pink_move_back");
+	texture[1] = Texture::Get("pamyu_pink_move_front");
+	texture[2] = Texture::Get("pamyu_pink_move_left");
+	texture[3] = Texture::Get("pamyu_pink_move_right");
 
 	transform.scale = Vector3::one * 100.0f;
 	transform.position = pos;
-	billboard = AddComponent<Billboard>("player");
+	billboard = AddComponent<Billboard>("pamyu_pink_move_back");
 	billboard->SetPattern(0);
 	collider = AddComponent<SphereCollider>();
 	collider->radius = 10.0f;
@@ -36,13 +44,25 @@ void Player::Update(void)
 	}
 
 	if (GetKeyboardPress(DIK_UP))
+	{
 		dir = Vector3(0.0f, 0.0f, 1.0f);
+		billboard->pTexture = texture[0];
+	}
 	else if (GetKeyboardPress(DIK_DOWN))
+	{
 		dir = Vector3(0.0f, 0.0, -1.0f);
+		billboard->pTexture = texture[1];
+	}
 	else if (GetKeyboardPress(DIK_LEFT))
+	{
 		dir = Vector3(-1.0f, 0.0f, 0.0f);
+		billboard->pTexture = texture[2];
+	}
 	if (GetKeyboardPress(DIK_RIGHT))
+	{
 		dir = Vector3(1.0f, 0.0f, 0.0f);
+		billboard->pTexture = texture[3];
+	}
 
 	transform.position += dir*PlayerSpeed;
 
@@ -93,5 +113,27 @@ void Player::OnCollisionEnter(Object * other)
 		}
 		
 	}
+
+}
+
+void Player::Clearfollower() {
+
+	if (pamyu == nullptr) {
+		return;
+	}
+	Pamyu* temp = pamyu;
+	Pamyu* old;
+	while (true){
+		old = temp;
+		temp = old->follower;
+		old->mojiObj->Destroy();
+		old->Destroy();
+
+
+		if (temp == NULL) {
+			break;
+		}
+	}
+	pamyu = nullptr;
 
 }

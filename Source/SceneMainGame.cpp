@@ -16,7 +16,7 @@ void SceneMainGame::Init(void) {
 	field->AddComponent<RectPolygon>("field_kari");
 	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000, 500));
 	field->transform.setRotation(PI / 2, 0, 0);
-	field->transform.position = Vector3(0.f, 0.f, 0.f);
+	field->transform.position = Vector3(0.f, -50.f, 0.f);
 	
 	score = new ScoreObject;
 	time = new TimerObject;
@@ -30,14 +30,26 @@ void SceneMainGame::Init(void) {
 	// カメラ初期化
 	camera = new MainCamera;
 	camera->at = Vector3(0.f, 0.f, 0.f);
-	camera->setBackColor(0xC1CED3);
 
 	// レンダリング設定
 	Renderer::GetInstance()->setCamera(camera);
 	FadeScreen::FadeIn(Color::white, 0.2f);
 
-	syukka = new Object;
+	
+	//出荷箱
+	syukka = new Syukka;
+	syukka->AddComponent<RectPolygon>("clickrange");
+	syukka->GetComponent<RectPolygon>()->SetSize(Vector2(100, 100));
+	syukka->transform.setRotation(PI / 2, 0, 0);
+	syukka->transform.position = Vector3(350.f, 0.01f, 0.f);
 
+	syukka->AddComponent<SphereCollider>();
+	syukka->GetComponent<SphereCollider>()->radius = 50.f;
+	syukka->SetScorePointer(score);
+
+	player = new Player(Vector3::zero);
+	
+	pm = new PamyuManager(player);
 }
 
 

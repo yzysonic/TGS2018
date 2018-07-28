@@ -18,7 +18,7 @@ ScoreObject::ScoreObject() {
 }
 
 void ScoreObject::Update() {
-	score++;
+	//score++;
 
 	this->GetComponent<Text>()->SetText("Score::"+std::to_string(score));
 }

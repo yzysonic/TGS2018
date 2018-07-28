@@ -9,6 +9,7 @@ class PamyuManager : public Object
 {
 public:
 
+
 	FrameTimer ft;
 	int numPamyu;		// ‚Ï‚İ‚ã‚ÌoŒ»”
 
@@ -21,7 +22,5 @@ public:
 	void Uninit(void) override;
 	void Update(void) override;
 
-	void PopPamyu(void);	// ‚Ï‚İ‚ã‚ğ Pop‚·‚é
-	
-
+	Pamyu::PamyuType LotPamyu(void);	// ‚Ï‚İ‚ã‚ğ ƒ‰ƒ“ƒ_ƒ€‚·‚é
 };
