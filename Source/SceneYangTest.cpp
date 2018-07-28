@@ -15,7 +15,6 @@ void SceneYangTest::Init(void)
 
 	// オブジェクト初期化
 	player	= new Player;
-	player->SetPosition(Vector3(0.0f, 30.0f, 0.0f));
 
 	// カメラ初期化
 	camera = new MainCamera;
@@ -29,17 +28,17 @@ void SceneYangTest::Init(void)
 	// 重力設定
 	Physics::GetInstance()->setGravity(Vector3(0.0f, -98.0f, 0.0f));
 
-	// 地面ブロックの生成
-	{
-		int i = 0;
-		for (auto& t : test)
-		{
-			t = new TestObject;
-			t->transform.position.x = (float)(i*10);
-			t->transform.position.y = (float)(((i/2)%2)*10);
-			i++;
-		}
-	}
+	//// 地面ブロックの生成
+	//{
+	//	int i = 0;
+	//	for (auto& t : test)
+	//	{
+	//		t = new TestObject;
+	//		t->transform.position.x = (float)(i*10);
+	//		t->transform.position.y = (float)(((i/2)%2)*10);
+	//		i++;
+	//	}
+	//}
 
 	debug	= DebugManager::GetInstance()->GetComponent<DebugMenu>();
 	DebugManager::OpenInspector(player);

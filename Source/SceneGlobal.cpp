@@ -43,6 +43,8 @@ void SceneGlobal::Init(void)
 	// サウンドボリューム設定
 	Sound::SetGlobalVolume(0.6f);
 
+	GameManager::GetInstance()->Var<int>("NumPosHistory") = 10;
+
 
 #ifdef _DEBUG
 	DebugManager::Create();
