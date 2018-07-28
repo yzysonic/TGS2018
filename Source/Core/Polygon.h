@@ -82,10 +82,14 @@ public:
 	void SetTexture(Texture* texture);
 	void LockBuff(Vertex3D** pVtx);
 	void UnlockBuff(void);
+	void SetPattern(unsigned int pattern);
+	void StepPattern(void);
+	unsigned int GetPattern(void);
 
 protected:
 	LPDIRECT3DVERTEXBUFFER9 pVtxBuff;
 	Vector2 size;
+	int pattern;	// 表示するパターン
 
 	HRESULT InitBuffer(void);
 

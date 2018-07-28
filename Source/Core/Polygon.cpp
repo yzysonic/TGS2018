@@ -306,6 +306,37 @@ void RectPolygon::UnlockBuff(void)
 	this->pVtxBuff->Unlock();
 }
 
+void RectPolygon::SetPattern(unsigned int pattern)
+{
+	this->pattern = pattern;
+
+	int x = pattern % this->pTexture->divideX;
+	int y = pattern / this->pTexture->divideX;
+	Vector2 size = Vector2(1.0f / this->pTexture->divideX, 1.0f / this->pTexture->divideY);
+
+	Vertex3D *pVtx;
+
+	this->pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
+
+	pVtx[0].uv = Vector2(x*size.x, y*size.y);
+	pVtx[1].uv = Vector2(x*size.x + size.x, y*size.y);
+	pVtx[2].uv = Vector2(x*size.x, y*size.y + size.y);
+	pVtx[3].uv = Vector2(x*size.x + size.x, y*size.y + size.y);
+
+	this->pVtxBuff->Unlock();
+
+}
+
+void RectPolygon::StepPattern(void)
+{
+	SetPattern(this->pattern + 1);
+}
+
+unsigned int RectPolygon::GetPattern(void)
+{
+	return this->pattern;
+}
+
 HRESULT RectPolygon::InitBuffer(void)
 {
 	HRESULT hr;
