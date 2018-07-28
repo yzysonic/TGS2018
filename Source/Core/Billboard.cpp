@@ -16,6 +16,7 @@ void Billboard::Draw(void)
 
 	D3DXMatrixInverse(&mtxView, NULL, &mtxView);
 
+	pDevice->SetRenderState(D3DRS_ALPHATESTENABLE, true);
 
 	// ワールドマトリクスの初期化
 	D3DXMatrixIdentity(&mtxWorld);
@@ -45,5 +46,5 @@ void Billboard::Draw(void)
 	// ポリゴンの描画
 	pDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, RECT_NUM_POLYGON);
 
-	//pDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
+	pDevice->SetRenderState(D3DRS_ALPHATESTENABLE, false);
 }

@@ -186,6 +186,7 @@ RectPolygon::RectPolygon(Texture * texture, Layer layer, std::string render_spac
 	this->Component::type = ComponentType::RectPolygon;
 	this->layer = layer;
 	this->rendType = RendererType::Default;
+	this->pattern = 0;
 
 	InitBuffer();
 	SetTexture(texture);

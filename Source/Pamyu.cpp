@@ -6,7 +6,8 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 	Texture::Load("pamyu_pink_wait00")->SetDivision(6, 10);
 	body = AddComponent<Billboard>("pamyu_pink_wait00");
 	body->SetPattern(0);
-
+	collider = AddComponent<BoxCollider2D>();
+	collider->size = Vector2::one * 1.0f;
 
 	switch (pamyu_type)
 	{
@@ -52,7 +53,7 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 	//moji = AddComponent<Billboard>
 	 
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < GameManager::GetInstance()->Var<int>("NumPosHistory"); i++)
 	{
 		posHistory.push(pos);
 	}
@@ -63,6 +64,7 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 
 	pamyuType = pamyu_type;
 
+	transform.position = pos;
 	transform.scale = Vector3::one * 100.0f;
 	mojiObj->transform.scale = transform.scale * 0.7f;
 
@@ -92,7 +94,7 @@ void Pamyu::Update(void)
 	}
 	static float off = 100;
 	ImGui::DragFloat("offset", &off);
-	mojiObj->transform.position = transform.position + Vector3(0, off, 0);
+	mojiObj->transform.position = transform.position + Vector3(0, 0, 0);
 
 }
 
@@ -104,7 +106,7 @@ void Pamyu::Follow(Vector3 frontPos)
 
 	if (follower != NULL)
 	{
-		follower->Follow(posHistory.back());
+		follower->Follow(posHistory.front());
 	}
 
 	posHistory.pop();
