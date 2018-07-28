@@ -218,6 +218,9 @@
     <ClInclude Include="Source\SceneGlobal.h" />
     <ClInclude Include="Source\SceneHaraTest.h" />
     <ClInclude Include="Source\SceneImGuiTest.h" />
+    <ClInclude Include="Source\SceneMainGame.h" />
+    <ClInclude Include="Source\SceneResult.h" />
+    <ClInclude Include="Source\SceneTitle.h" />
     <ClInclude Include="Source\SceneYangTest.h" />
     <ClInclude Include="Source\Snapshot.h" />
   </ItemGroup>
@@ -288,6 +291,9 @@
     <ClCompile Include="Source\SceneGlobal.cpp" />
     <ClCompile Include="Source\SceneHaraTest.cpp" />
     <ClCompile Include="Source\SceneImGuiTest.cpp" />
+    <ClCompile Include="Source\SceneMainGame.cpp" />
+    <ClCompile Include="Source\SceneResult.cpp" />
+    <ClCompile Include="Source\SceneTitle.cpp" />
     <ClCompile Include="Source\SceneYangTest.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
   </ItemGroup>

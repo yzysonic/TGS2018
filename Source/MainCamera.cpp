@@ -10,6 +10,10 @@ MainCamera::MainCamera(void)
 
 	coordinate->theta		= 1.444f;
 	coordinate->distance	= 65.0f;
+
+	smooth->SetActive(false);
+
+	render_target = nullptr;
 }
 
 void MainCamera::SetTarget(Transform * target)
@@ -18,3 +22,4 @@ void MainCamera::SetTarget(Transform * target)
 	smooth->target = target;
 	smooth->SetActive(true);
 }
+

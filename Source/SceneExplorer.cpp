@@ -5,6 +5,9 @@
 #include "SceneImGuiTest.h"
 #include "SceneYangTest.h"
 #include "SceneHaraTest.h"
+#include "SceneTitle.h"
+#include "SceneMainGame.h"
+#include "SceneResult.h"
 void SceneExplorer::Init(void)
 {
 	columns = 3;
@@ -25,6 +28,9 @@ void SceneExplorer::Init(void)
 	AddScene<SceneImGuiTest>();
 	AddScene<SceneYangTest>();
 	AddScene<SceneHaraTest>();
+	AddScene<SceneTitle>();
+	AddScene<SceneMainGame>();
+	AddScene<SceneResult>();
 	FadeScreen::FadeIn(Color::black, 0.0f);
 }
 

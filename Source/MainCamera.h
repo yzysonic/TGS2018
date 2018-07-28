@@ -8,7 +8,6 @@ class MainCamera :public Camera
 public:
 	MainCamera(void);
 	void SetTarget(Transform* target);
-
 private:
 	CameraSphericalCoordinate* coordinate;
 	CameraSmoothFollow* smooth;
