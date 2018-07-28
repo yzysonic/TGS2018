@@ -213,6 +213,7 @@
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\MainCamera.h" />
     <ClInclude Include="Source\ObjectExplorer.h" />
+    <ClInclude Include="Source\Pamyu.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\SceneExplorer.h" />
     <ClInclude Include="Source\SceneGlobal.h" />
@@ -222,7 +223,9 @@
     <ClInclude Include="Source\SceneResult.h" />
     <ClInclude Include="Source\SceneTitle.h" />
     <ClInclude Include="Source\SceneYangTest.h" />
+    <ClInclude Include="Source\ScoreObject.h" />
     <ClInclude Include="Source\Snapshot.h" />
+    <ClInclude Include="Source\TimerObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CameraPlay.cpp" />
@@ -286,6 +289,7 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\MainCamera.cpp" />
     <ClCompile Include="Source\ObjectExplorer.cpp" />
+    <ClCompile Include="Source\Pamyu.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\SceneExplorer.cpp" />
     <ClCompile Include="Source\SceneGlobal.cpp" />
@@ -295,7 +299,9 @@
     <ClCompile Include="Source\SceneResult.cpp" />
     <ClCompile Include="Source\SceneTitle.cpp" />
     <ClCompile Include="Source\SceneYangTest.cpp" />
+    <ClCompile Include="Source\ScoreObject.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
+    <ClCompile Include="Source\TimerObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #include "SceneHaraTest.h"
+#include "Pamyu.h"
 
 void SceneHaraTest::Init(void)
 {
@@ -8,6 +9,7 @@ void SceneHaraTest::Init(void)
 	model = new Object;
 	model->AddComponent<StaticModel>("hara_test");
 
+	pamyu = new Pamyu(Vector3::one, Pamyu::PamyuType::Mi);
 
 	// ƒJƒƒ‰‰Šú‰»
 	camera = new MainCamera;
