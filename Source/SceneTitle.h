@@ -1,6 +1,5 @@
 #pragma once
 #include "Core\Core.h"
-#include "Core\Text.h"
 
 class SceneTitle :public Scene {
 public:
@@ -9,6 +8,6 @@ public:
 	void Update(void) override;
 
 private:
-	bool			next_scene;
-	Object*			title;
+	bool	next_scene;
+	Object*	title;
 };

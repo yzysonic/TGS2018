@@ -1,6 +1,7 @@
 #include "SceneTitle.h"
 #include "SceneMainGame.h"
 #include "FadeScreen.h"
+#include "Core\Text.h"
 
 void SceneTitle::Init(void)
 {
