@@ -3,7 +3,7 @@
 CharacterDisplayer::CharacterDisplayer()
 {
 	numDisplayCharacters = 0;
-	ft.Reset(2);
+	ft.Reset(5);
 }
 
 CharacterDisplayer::~CharacterDisplayer()
@@ -16,6 +16,7 @@ void CharacterDisplayer::Uninit(void)
 
 void CharacterDisplayer::Update(void)
 {
+	ft.Step();
 	if (ft.TimeUp())
 	{
 		// Žš‚ðÁ‚·
@@ -47,16 +48,19 @@ void CharacterDisplayer::SetDisplayCharacter(Pamyu::PamyuType pt)
 
 void CharacterDisplayer::FinishSetCharacter(void)
 {
+	if (numDisplayCharacters == 0) return;
 	int i = 0;
-	int size = min(50, 1000/numDisplayCharacters);
+	int size = min(75, 1000/numDisplayCharacters);
 	while (!pamyuType.empty())
 	{
 		Pamyu::PamyuType pt = pamyuType.front();
 
 		// Žš‚ð•\Ž¦
 		Object *moji_object = new Object;
-		moji_object->transform.position = Vector3(-500.0f + i * 50.0f, -200.0f, 0.0f);
-		
+		moji_object->transform.scale = Vector3::one * size;
+		//moji_object->transform.position = Vector3(0.0f, 0.0f, 0.0f);
+		moji_object->transform.position = Vector3(-600.0f + i * size + size*0.2f, 0.0f, 330.0f);
+
 		switch (pt)
 		{
 		case Pamyu::PamyuType::Pa:
