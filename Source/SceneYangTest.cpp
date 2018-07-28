@@ -24,7 +24,6 @@ void SceneYangTest::Init(void)
 
 	// ƒŒƒ“ƒ_ƒŠƒ“ƒOÝ’è
 	Renderer::GetInstance()->setCamera(camera);
-	Light::Init();
 
 	// d—ÍÝ’è
 	Physics::GetInstance()->setGravity(Vector3(0.0f, -98.0f, 0.0f));
