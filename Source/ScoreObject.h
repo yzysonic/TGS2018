@@ -10,7 +10,7 @@ public:
 	void Uninit();
 
 	int GetScore();
-	void SetScore(int score) { this->score = score; }
+	void AddScore(int score) { this->score += score; }
 private:
 
 
