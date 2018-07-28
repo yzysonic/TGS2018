@@ -1,6 +1,8 @@
 #include "SceneMainGame.h"
 #include "SceneResult.h"
 #include "FadeScreen.h"
+
+int SceneMainGame::gamescore;
 void SceneMainGame::Init(void) {
 
 	Texture::Load("field_kari");
@@ -34,6 +36,7 @@ void SceneMainGame::Init(void) {
 	Renderer::GetInstance()->setCamera(camera);
 	FadeScreen::FadeIn(Color::white, 0.2f);
 
+	syukka = new Object;
 
 }
 
@@ -45,7 +48,7 @@ void SceneMainGame::Update(void) {
 
 	if (time->TimerEnd()) {
 
-		GameManager::SetGameScore(score->GetScore());
+		gamescore = score->GetScore();
 		GameManager::GetInstance()->SetScene(new SceneResult);
 	}
 

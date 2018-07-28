@@ -20,5 +20,9 @@ public:
 	TimerObject* time;
 
 	Object* house;
+	Object* syukka;
 
+
+
+	static int gamescore;
 };

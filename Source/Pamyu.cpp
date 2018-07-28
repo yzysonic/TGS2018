@@ -6,8 +6,8 @@ Pamyu::Pamyu(Vector3 pos, PamyuType pamyu_type)
 	Texture::Load("pamyu_pink_wait00")->SetDivision(6, 10);
 	body = AddComponent<Billboard>("pamyu_pink_wait00");
 	body->SetPattern(0);
-	collider = AddComponent<BoxCollider2D>();
-	collider->size = Vector2::one * 1.0f;
+	collider = AddComponent<SphereCollider>();
+	collider->radius = 10.0f;
 
 	switch (pamyu_type)
 	{
@@ -93,7 +93,6 @@ void Pamyu::Update(void)
 		body->StepPattern();
 	}
 	static float off = 100;
-	ImGui::DragFloat("offset", &off);
 	mojiObj->transform.position = transform.position + Vector3(0, 0, 0);
 
 }

@@ -19,7 +19,7 @@ public:
 
 	Billboard *moji;
 	Billboard *body;
-	BoxCollider2D * collider;
+	SphereCollider * collider;
 
 	int state;				// 現在の状態（0: 待機, 1:追従follow）
 	PamyuType pamyuType;	// 「ぱ」「み」「ゅ」「その他」
