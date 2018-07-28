@@ -37,6 +37,8 @@ void SceneMainGame::Update(void) {
 
 
 	if (time->TimerEnd()) {
+
+		GameManager::SetGameScore(score->GetScore());
 		GameManager::GetInstance()->SetScene(new SceneResult);
 	}
 

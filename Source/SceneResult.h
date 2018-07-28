@@ -10,6 +10,6 @@ public:
 	void Update(void) override;
 
 
-	Object* titlelogo;
+	Object* score;
 
 };

@@ -35,6 +35,7 @@ void SceneTitle::Update(void) {
 
 	if (GetKeyboardTrigger(DIK_RETURN))
 	{
+
 		GameManager::GetInstance()->SetScene(new SceneMainGame);
 	}
 

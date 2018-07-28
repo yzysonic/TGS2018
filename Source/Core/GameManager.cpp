@@ -5,6 +5,9 @@
 #include "../Imgui/ImGuiImpl.h"
 #endif
 
+
+int GameManager::gamescore;
+
 void GameManager::Update(void)
 {
 	if (m_pInstance->set_scene_event)
