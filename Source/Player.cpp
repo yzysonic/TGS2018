@@ -93,3 +93,25 @@ void Player::OnCollisionEnter(Object * other)
 	}
 
 }
+
+void Player::Clearfollower() {
+
+	if (pamyu == nullptr) {
+		return;
+	}
+	Pamyu* temp = pamyu;
+	Pamyu* old;
+	while (true){
+		old = temp;
+		temp = old->follower;
+		old->mojiObj->Destroy();
+		old->Destroy();
+
+
+		if (temp == NULL) {
+			break;
+		}
+	}
+	pamyu = nullptr;
+
+}

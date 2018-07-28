@@ -18,7 +18,7 @@ void Syukka::Uninit() {
 void Syukka::OnCollisionEnter(Object* other) {
 
 	int score = 0;
-	int combo = 0;
+	int combo = 1;
 	int count = 0;
 
 	if (other->type == ObjectType::Player) {
@@ -28,7 +28,7 @@ void Syukka::OnCollisionEnter(Object* other) {
 
 		while (pamyu != NULL) {
 
-			score += 10 * (combo+1);
+			score += 10 * (combo*combo);
 			if ((Pamyu::PamyuType)(count) == pamyu->pamyuType) {
 				count++;
 				if (count == 2){
@@ -38,14 +38,18 @@ void Syukka::OnCollisionEnter(Object* other) {
 			}
 			else{
 				count = 0;
+				combo = 1;
 			}
 			pamyu = pamyu->follower;
+
 		}
 
 		
 		if (scoreobj != nullptr) {
 			scoreobj->AddScore(score);
 		}
+
+		player->Clearfollower();
 	}
 
 

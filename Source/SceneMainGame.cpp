@@ -16,7 +16,7 @@ void SceneMainGame::Init(void) {
 	field->AddComponent<RectPolygon>("field_kari");
 	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000, 500));
 	field->transform.setRotation(PI / 2, 0, 0);
-	field->transform.position = Vector3(0.f, 0.f, 0.f);
+	field->transform.position = Vector3(0.f, -50.f, 0.f);
 	
 	score = new ScoreObject;
 	time = new TimerObject;

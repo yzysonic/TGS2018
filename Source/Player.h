@@ -13,7 +13,7 @@ public:
 
 	void Update(void) override;
 	void OnCollisionEnter(Object * other);
-
+	void Clearfollower();
 private:
 	Billboard * billboard;
 	SphereCollider * collider;
