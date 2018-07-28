@@ -1,6 +1,7 @@
 #pragma once
 #include "Core/Core.h"
 #include "Pamyu.h"
+#include "Shadow.h"
 #include <queue>
 
 #define PlayerSpeed (3.0f)
@@ -19,5 +20,6 @@ private:
 	Vector3 dir;
 	std::queue<Vector3> pos_history;
 	Pamyu * pamyu;
+	Shadow * shadow;
 	bool atari;
 };

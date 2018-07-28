@@ -225,6 +225,7 @@
     <ClInclude Include="Source\SceneTitle.h" />
     <ClInclude Include="Source\SceneYangTest.h" />
     <ClInclude Include="Source\ScoreObject.h" />
+    <ClInclude Include="Source\Shadow.h" />
     <ClInclude Include="Source\Snapshot.h" />
     <ClInclude Include="Source\TimerObject.h" />
   </ItemGroup>
@@ -302,6 +303,7 @@
     <ClCompile Include="Source\SceneTitle.cpp" />
     <ClCompile Include="Source\SceneYangTest.cpp" />
     <ClCompile Include="Source\ScoreObject.cpp" />
+    <ClCompile Include="Source\Shadow.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
     <ClCompile Include="Source\TimerObject.cpp" />
   </ItemGroup>

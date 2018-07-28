@@ -11,6 +11,7 @@ void SceneGlobal::Init(void)
 {
 	// リソースのロード
 	VertexShader::Load("InstancingVS.hlsl");
+	Texture::Load("shadow");
 
 	// 終了プロセスの設定
 	Game::EndProcess = [this]
@@ -64,6 +65,7 @@ void SceneGlobal::Update(void)
 
 void SceneGlobal::Uninit(void)
 {
+	Texture::Release("shadow");
 	FadeScreen::Singleton<FadeScreen>::Destroy();
 
 #ifdef _DEBUG

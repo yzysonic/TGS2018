@@ -14,6 +14,8 @@ Player::Player(Vector3 pos)
 	collider = AddComponent<SphereCollider>();
 	collider->radius = 10.0f;
 
+	shadow = new Shadow(this);
+
 	animTimer.Reset(1 / 30.f);
 	dir = Vector3(0.0f, 0.0f, 1.0f);
 
