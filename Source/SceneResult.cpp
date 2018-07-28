@@ -1,6 +1,7 @@
 #include "SceneResult.h"
 #include "SceneTitle.h"
 #include "Core\Text.h"
+#include "SceneMainGame.h"
 void SceneResult::Init(void) {
 
 
@@ -22,7 +23,7 @@ void SceneResult::Uninit(void) {
 void SceneResult::Update(void) {
 
 
-	score->GetComponent<Text>()->SetText(std::to_string(GameManager::GetGameScore()));
+	score->GetComponent<Text>()->SetText(std::to_string(SceneMainGame::gamescore));
 
 
 	if (GetKeyboardTrigger(DIK_RETURN))
