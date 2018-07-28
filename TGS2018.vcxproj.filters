@@ -261,6 +261,10 @@
     <ClInclude Include="Source\TimerObject.h">
       <Filter>GameObject</Filter>
     </ClInclude>
+    <ClInclude Include="Source\syukka.h" />
+    <ClInclude Include="Source\CharacterDisplayer.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Collision.cpp">
@@ -476,5 +480,7 @@
     <ClCompile Include="Source\ScoreObject.cpp" />
     <ClCompile Include="Source\TimerObject.cpp" />
     <ClCompile Include="Source\PamyuManager.cpp" />
+    <ClCompile Include="Source\syukka.cpp" />
+    <ClCompile Include="Source\CharacterDisplayer.cpp" />
   </ItemGroup>
 </Project>

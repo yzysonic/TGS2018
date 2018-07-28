@@ -149,6 +149,7 @@
     <ClInclude Include="Source\CameraPlay.h" />
     <ClInclude Include="Source\CameraSmoothFollow.h" />
     <ClInclude Include="Source\CameraSphericalCoordinate.h" />
+    <ClInclude Include="Source\CharacterDisplayer.h" />
     <ClInclude Include="Source\Core\AllocateHirerachy.h" />
     <ClInclude Include="Source\Core\Billboard.h" />
     <ClInclude Include="Source\Core\BoneFrame.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="Source\CameraPlay.cpp" />
     <ClCompile Include="Source\CameraSmoothFollow.cpp" />
     <ClCompile Include="Source\CameraSphericalCoordinate.cpp" />
+    <ClCompile Include="Source\CharacterDisplayer.cpp" />
     <ClCompile Include="Source\Core\AllocateHirerachy.cpp" />
     <ClCompile Include="Source\Core\Billboard.cpp" />
     <ClCompile Include="Source\Core\BoneFrame.cpp" />
