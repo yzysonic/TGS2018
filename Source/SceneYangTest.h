@@ -4,22 +4,8 @@
 #include "Player.h"
 #include "MainCamera.h"
 #include "DebugMenu.h"
-
-class TestObject : public Object
-{
-public:
-	TestObject(void);
-	void Update(void) override;
-	void OnCollisionEnter(Object* other) override;
-	void OnCollisionStay(Object* object) override;
-	void OnCollisionExit(Object* other) override;
-
-private:
-	BoxCollider2D * collider;
-	bool collide;
-	StaticModel * model;
-}; 
-
+#include"ScoreObject.h"
+#include "TimerObject.h"
 
 class SceneYangTest : public Scene
 {
@@ -29,10 +15,14 @@ public:
 	void Uninit(void) override;
 
 private:
-	TestObject * test[10];
 	Player * player;
 	MainCamera * camera;
 	DebugMenu * debug;
 	FrameTimer timer;
 	Object * test_model;
+
+	Object* field;
+	ScoreObject* score;
+	TimerObject* time;
+
 };

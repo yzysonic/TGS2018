@@ -6,13 +6,18 @@
 #include "Inspector.h"
 #include "DebugManager.h"
 #include "Pamyu.h"
+#
 
 #pragma region SceneYangTest
 
 void SceneYangTest::Init(void)
 {
 	// リソースのロード
-	ModelData::Load("field");
+	Texture::Load("field_kari");
+	Texture::Load("time");
+	Texture::Load("score");
+	Texture::Load("house");
+	Texture::Load("clickrange");
 
 	// オブジェクト初期化
 	player	= new Player(Vector3(0.0f, 0.0f, 30.f));
@@ -25,82 +30,45 @@ void SceneYangTest::Init(void)
 	// レンダリング設定
 	Renderer::GetInstance()->setCamera(camera);
 
-	// 重力設定
-	Physics::GetInstance()->setGravity(Vector3(0.0f, -98.0f, 0.0f));
+	field = new Object;
 
-	//// 地面ブロックの生成
-	//{
-	//	int i = 0;
-	//	for (auto& t : test)
-	//	{
-	//		t = new TestObject;
-	//		t->transform.position.x = (float)(i*10);
-	//		t->transform.position.y = (float)(((i/2)%2)*10);
-	//		i++;
-	//	}
-	//}
+	field->AddComponent<RectPolygon>("field_kari", Layer::BG_00);
+	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000, 500));
+	field->transform.setRotation(PI / 2, 0, 0);
+	field->transform.position = Vector3(0.f, -50.f, 0.f);
+
+	score = new ScoreObject;
+	time = new TimerObject;
 
 	for (int i = 0; i < 3; i++)
 	{
-		new Pamyu(Vector3(50*i, 0.0f, 0.0f), Pamyu::PamyuType::Mi);
+		new Pamyu(Vector3(100*i, 0.0f, 0.0f), Pamyu::PamyuType::Mi);
 	}
 
-	debug	= DebugManager::GetInstance()->GetComponent<DebugMenu>();
-	DebugManager::OpenInspector(player);
+	//debug	= DebugManager::GetInstance()->GetComponent<DebugMenu>();
+	//DebugManager::OpenInspector(player);
 }
 
 void SceneYangTest::Update(void)
 {
-	timer++;
+	if (time->TimerEnd()) {
 
-	// テストメニュー
-	ImGui::SetNextWindowSize(ImVec2(150.0f, 0), ImGuiCond_Once);
-	ImGui::Begin("TestMenu", NULL,  ImGuiWindowFlags_NoResize);
+		GameManager::SetGameScore(score->GetScore());
+		//GameManager::GetInstance()->SetScene(new SceneResult);
+	}
 
-	ImGui::End();
-
-	// デバッグメニュー
-	ImGui::SetNextWindowSize(ImVec2(debug->MenuWidth, 0), ImGuiCond_Once);
-	ImGui::Begin("DebugMenu ", NULL, ImGuiWindowFlags_NoResize);
-	debug->GuiContent();
-	ImGui::End();
 }
 
 void SceneYangTest::Uninit(void)
 {
+	Texture::Release("field_kari");
+	Texture::Release("time");
+	Texture::Release("score");
+	Texture::Release("house");
+	Texture::Release("clickrange");
+
 	Renderer::GetInstance()->setCamera(nullptr);
-	ModelData::Release("field");
 
-}
-
-#pragma endregion
-
-
-#pragma region SeasonTestObject
-
-TestObject::TestObject(void)
-{
-	type = ObjectType::Field;
-	model = AddComponent<StaticModel>("field");
-	collider = AddComponent<BoxCollider2D>();
-	collider->size = Vector2::one*10.0f;
-}
-
-void TestObject::Update(void)
-{
-}
-
-void TestObject::OnCollisionEnter(Object * other)
-{
-}
-
-void TestObject::OnCollisionStay(Object * object)
-{
-	collide = true;
-}
-
-void TestObject::OnCollisionExit(Object * other)
-{
 }
 
 #pragma endregion
