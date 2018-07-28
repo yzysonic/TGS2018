@@ -13,7 +13,7 @@ void SceneMainGame::Init(void) {
 
 	field = new Object;
 
-	field->AddComponent<RectPolygon>("field_kari");
+	field->AddComponent<RectPolygon>("field_kari", Layer::BG_00);
 	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000, 500));
 	field->transform.setRotation(PI / 2, 0, 0);
 	field->transform.position = Vector3(0.f, -50.f, 0.f);
@@ -38,10 +38,10 @@ void SceneMainGame::Init(void) {
 	
 	//o‰×” 
 	syukka = new Syukka;
-	syukka->AddComponent<RectPolygon>("clickrange");
+	syukka->AddComponent<RectPolygon>("clickrange", Layer::BG_00);
 	syukka->GetComponent<RectPolygon>()->SetSize(Vector2(100, 100));
 	syukka->transform.setRotation(PI / 2, 0, 0);
-	syukka->transform.position = Vector3(350.f, 0.01f, 0.f);
+	syukka->transform.position = Vector3(350.f, -50.0f+0.01f, 0.f);
 
 	syukka->AddComponent<SphereCollider>();
 	syukka->GetComponent<SphereCollider>()->radius = 50.f;

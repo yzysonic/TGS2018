@@ -10,7 +10,7 @@ MainCamera::MainCamera(void)
 	coordinate->theta		=  0.5;
 	coordinate->distance	= 600.0f;
 
-	setBackColor(Color(80, 225, 60, 255));
+	setBackColor(Color(50, 215, 250, 255));
 
 }
 
