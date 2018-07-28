@@ -29,16 +29,23 @@ public:
 	static void ReloadScene(void);
 	static Scene* GetScene(void);
 	static Scene* GetGlobalScene(void);
-
+	static void SetGameScore(int score) { gamescore = score; }
+	static int GetGameScore() { return gamescore; }
 private:
 	GameManager(void);
 	std::unique_ptr<Scene> scene[SceneStackMax+2];
 	Event set_scene_event;
 	UINT scene_stack_num;
 
+
+	//âià‰ÉXÉRÉAÇÃÇΩÇﬂ
+	static int gamescore;
+
 	static void SetScene(Scene* scene, int no);
 	static void ClearSceneStack(void);
 };
+
+
 
 template<typename T>
 inline T & GameManager::Var(std::string key)

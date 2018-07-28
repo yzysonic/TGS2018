@@ -8,6 +8,9 @@ public:
 
 	void Update();
 	void Uninit();
+
+	int GetScore();
+
 private:
 
 

@@ -7,7 +7,7 @@ void Billboard::Draw(void)
 	auto pDevice = Direct3D::GetDevice();
 	auto camera = Renderer::GetInstance()->getCamera();
 
-	pDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
+	//pDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
 	
 	mtxView = camera->getViewMatrix(false);
 	mtxView._41 =

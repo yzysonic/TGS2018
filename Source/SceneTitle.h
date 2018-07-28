@@ -13,5 +13,6 @@ public:
 
 
 	Object* titlelogo;
+	bool SceneEnd = false;
 
 };

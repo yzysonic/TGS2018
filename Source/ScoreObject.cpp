@@ -12,6 +12,9 @@ ScoreObject::ScoreObject() {
 
 	score = 0;
 
+
+
+
 }
 
 void ScoreObject::Update() {
@@ -22,4 +25,8 @@ void ScoreObject::Update() {
 
 void ScoreObject::Uninit() {
 
+}
+
+int ScoreObject::GetScore() {
+	return score;
 }
