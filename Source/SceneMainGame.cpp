@@ -1,5 +1,7 @@
 #include "SceneMainGame.h"
 
+#include"ScoreObject.h"
+#include "TimerObject.h"
 void SceneMainGame::Init(void) {
 
 	Texture::Load("field_kari");
@@ -13,16 +15,10 @@ void SceneMainGame::Init(void) {
 	field->transform.setRotation(PI / 2, 0, 0);
 	field->transform.position = Vector3(0.f, 0.f, 0.f);
 	
+	score = new ScoreObject;
 
-	score = new Object;
-	score->AddComponent<RectPolygon2D>("score");
-	score->transform.position = Vector3(-400,300,0);
-	score->GetComponent<RectPolygon2D>()->SetSize(400.f, 200.f);
+	time = new TimerObject;
 
-	time = new Object;
-	time->AddComponent<RectPolygon2D>("time");
-	time->transform.position = Vector3(0, 300, 0);
-	time->GetComponent<RectPolygon2D>()->SetSize(400.f, 200.f);
 
 	// ƒJƒƒ‰‰Šú‰»
 	camera = new MainCamera;
@@ -34,9 +30,11 @@ void SceneMainGame::Init(void) {
 
 
 
+
 }
 
 void SceneMainGame::Uninit(void) {
+
 }
 
 void SceneMainGame::Update(void) {
