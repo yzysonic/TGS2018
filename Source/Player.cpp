@@ -104,7 +104,7 @@ void Player::Clearfollower() {
 	while (true){
 		old = temp;
 		temp = old->follower;
-
+		old->mojiObj->Destroy();
 		old->Destroy();
 
 
