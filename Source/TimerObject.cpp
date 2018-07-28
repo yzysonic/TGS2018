@@ -11,7 +11,7 @@ TimerObject::TimerObject() {
 
 	score = 0;
 	frame = 0;
-	timer = 5;
+	timer = 100;
 }
 
 void TimerObject::Update() {

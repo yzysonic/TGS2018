@@ -16,9 +16,9 @@ public:
 
 private:
 	Billboard * billboard;
-	BoxCollider2D * collider;
+	SphereCollider * collider;
 	FrameTimer animTimer;
 	Vector3 dir;
 	std::queue<Vector3> pos_history;
-
+	bool atari;
 };

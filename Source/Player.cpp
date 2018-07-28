@@ -11,8 +11,8 @@ Player::Player(Vector3 pos)
 	transform.position = pos;
 	billboard = AddComponent<Billboard>("player");
 	billboard->SetPattern(0);
-	collider = AddComponent<BoxCollider2D>();
-	collider->size = Vector2::one * 10.0f;
+	collider = AddComponent<SphereCollider>();
+	collider->radius = 10.0f;
 
 	animTimer.Reset(1 / 30.f);
 	dir = Vector3(0.0f, 0.0f, 1.0f);
@@ -44,6 +44,15 @@ void Player::Update(void)
 
 	transform.position += dir*PlayerSpeed;
 
+	if (transform.position.x < -500.0f)
+		transform.position.x += 1000.0f;
+	else if(transform.position.x > 500.0f)
+		transform.position.x -= 1000.0f;
+	else if (transform.position.z < -250.0f)
+		transform.position.z += 500.0f;
+	else if (transform.position.z > 250.0f)
+		transform.position.z -= 500.0f;
+
 
 	pos_history.push(transform.position);
 
@@ -58,6 +67,7 @@ void Player::Update(void)
 
 void Player::OnCollisionEnter(Object * other)
 {
+
 	if (other->type == ObjectType::Item)
 	{
 		auto newpamyu = (Pamyu*)other;
@@ -81,4 +91,5 @@ void Player::OnCollisionEnter(Object * other)
 		}
 		
 	}
+
 }

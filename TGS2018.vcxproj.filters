@@ -253,13 +253,12 @@
     <ClInclude Include="Source\Pamyu.h">
       <Filter>GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ScoreObject.h">
+    <ClInclude Include="Source\ScoreObject.h" />
+    <ClInclude Include="Source\TimerObject.h" />
+    <ClInclude Include="Source\PamyuManager.h">
       <Filter>GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Source\TimerObject.h">
-      <Filter>GameObject</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\syukka.h">
       <Filter>GameObject</Filter>
     </ClInclude>
   </ItemGroup>
@@ -473,15 +472,9 @@
     <ClCompile Include="Source\SceneResult.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ScoreObject.cpp">
-      <Filter>GameObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\TimerObject.cpp">
-      <Filter>GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Pamyu.cpp" />
-    <ClCompile Include="Source\syukka.cpp">
-      <Filter>GameObject</Filter>
-    </ClCompile>
+    <ClCompile Include="Source\ScoreObject.cpp" />
+    <ClCompile Include="Source\TimerObject.cpp" />
+    <ClCompile Include="Source\PamyuManager.cpp" />
   </ItemGroup>
 </Project>

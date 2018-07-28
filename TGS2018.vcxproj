@@ -214,6 +214,7 @@
     <ClInclude Include="Source\MainCamera.h" />
     <ClInclude Include="Source\ObjectExplorer.h" />
     <ClInclude Include="Source\Pamyu.h" />
+    <ClInclude Include="Source\PamyuManager.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\SceneExplorer.h" />
     <ClInclude Include="Source\SceneGlobal.h" />
@@ -291,6 +292,7 @@
     <ClCompile Include="Source\MainCamera.cpp" />
     <ClCompile Include="Source\ObjectExplorer.cpp" />
     <ClCompile Include="Source\Pamyu.cpp" />
+    <ClCompile Include="Source\PamyuManager.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\SceneExplorer.cpp" />
     <ClCompile Include="Source\SceneGlobal.cpp" />
