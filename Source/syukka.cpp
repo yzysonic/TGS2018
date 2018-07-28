@@ -26,7 +26,7 @@ void Syukka::OnCollisionEnter(Object* other) {
 
 		Pamyu* pamyu = player->pamyu;
 
-		while (pamyu != nullptr) {
+		while (pamyu != NULL) {
 
 			score += 10 * (combo+1);
 			if ((Pamyu::PamyuType)(count) == pamyu->pamyuType) {
@@ -39,11 +39,12 @@ void Syukka::OnCollisionEnter(Object* other) {
 			else{
 				count = 0;
 			}
+			pamyu = pamyu->follower;
 		}
 
 		
 		if (scoreobj != nullptr) {
-			scoreobj->SetScore(score);
+			scoreobj->AddScore(score);
 		}
 	}
 

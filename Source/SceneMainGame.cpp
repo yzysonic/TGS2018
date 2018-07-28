@@ -44,10 +44,13 @@ void SceneMainGame::Init(void) {
 	syukka->transform.setRotation(PI / 2, 0, 0);
 	syukka->transform.position = Vector3(350.f, 0.01f, 0.f);
 
-	syukka->AddComponent<BoxCollider2D>();
-	syukka->GetComponent<BoxCollider2D>()->size = Vector2(100.f,100.f);
+	syukka->AddComponent<SphereCollider>();
+	syukka->GetComponent<SphereCollider>()->radius = 50.f;
 	syukka->SetScorePointer(score);
 
+	player = new Player(Vector3::zero);
+	
+	pm = new PamyuManager(player);
 }
 
 
