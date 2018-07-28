@@ -250,6 +250,9 @@
     <ClInclude Include="Source\SceneResult.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Pamyu.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Collision.cpp">
@@ -461,5 +464,6 @@
     <ClCompile Include="Source\SceneResult.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Pamyu.cpp" />
   </ItemGroup>
 </Project>
