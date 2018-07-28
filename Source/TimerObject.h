@@ -8,6 +8,7 @@ public:
 
 	void Update();
 	void Uninit();
+	bool TimerEnd();
 private:
 
 

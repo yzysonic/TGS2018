@@ -1,7 +1,6 @@
 #include "SceneMainGame.h"
+#include "SceneResult.h"
 
-#include"ScoreObject.h"
-#include "TimerObject.h"
 void SceneMainGame::Init(void) {
 
 	Texture::Load("field_kari");
@@ -37,8 +36,12 @@ void SceneMainGame::Init(void) {
 void SceneMainGame::Update(void) {
 
 
+	if (time->TimerEnd()) {
+		GameManager::GetInstance()->SetScene(new SceneResult);
+	}
+
 }
 void SceneMainGame::Uninit(void) {
-
+	Renderer::GetInstance()->setCamera(nullptr);
 }
 

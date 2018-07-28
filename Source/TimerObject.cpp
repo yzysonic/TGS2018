@@ -11,7 +11,7 @@ TimerObject::TimerObject() {
 
 	score = 0;
 	frame = 0;
-	timer = 99;
+	timer = 5;
 }
 
 void TimerObject::Update() {
@@ -28,4 +28,13 @@ void TimerObject::Update() {
 }
 
 void TimerObject::Uninit() {
+}
+
+bool TimerObject::TimerEnd() {
+
+	if (timer == 0) {
+		return true;
+	}
+
+	return false;
 }
