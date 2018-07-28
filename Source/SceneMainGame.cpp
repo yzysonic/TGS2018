@@ -9,7 +9,7 @@ void SceneMainGame::Init(void) {
 	field = new Object;
 
 	field->AddComponent<RectPolygon>("field001");
-	field->GetComponent<RectPolygon>()->SetSize(Vector2(1000.f, 1000.f));
+	field->GetComponent<RectPolygon>()->SetSize(Vector2(500.f, 500.f));
 	field->transform.setRotation(PI / 2, 0, 0);
 	field->transform.position = Vector3(0.f, 0.f, 0.f);
 	
