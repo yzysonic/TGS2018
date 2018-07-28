@@ -2,7 +2,7 @@
 #include "Core/Core.h"
 #include <queue>
 
-#define PlayerSpeed (40.0f)
+#define PlayerSpeed (3.0f)
 
 class Player : public Object
 {
@@ -15,5 +15,6 @@ private:
 	Billboard * billboard;
 	BoxCollider2D * collider;
 	FrameTimer animTimer;
+	Vector3 dir;
 	std::queue<Vector3> pos_history;
 };
