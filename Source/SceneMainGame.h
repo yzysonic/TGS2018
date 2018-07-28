@@ -11,5 +11,8 @@ public:
 
 	MainCamera * camera;
 
+	Object* field;
+	Object* score;
+	Object* time;
 
 };

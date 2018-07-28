@@ -10,5 +10,4 @@ public:
 	void SetTarget(Transform* target);
 private:
 	CameraSphericalCoordinate* coordinate;
-	CameraSmoothFollow* smooth;
 };
