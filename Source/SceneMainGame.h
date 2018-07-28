@@ -19,4 +19,6 @@ public:
 	ScoreObject* score;
 	TimerObject* time;
 
+	Object* house;
+
 };

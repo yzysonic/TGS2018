@@ -12,6 +12,9 @@ ScoreObject::ScoreObject() {
 
 	score = 0;
 
+
+
+
 }
 
 void ScoreObject::Update() {

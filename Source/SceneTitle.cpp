@@ -1,6 +1,6 @@
 #include "SceneTitle.h"
 #include "SceneMainGame.h"
-
+#include "FadeScreen.h"
 void SceneTitle::Init(void) {
 
 	// ”wŒiFi”wŒi‰æ‘œ‚Æ’u‚«Š·‚¦—\’èHj
@@ -33,9 +33,14 @@ void SceneTitle::Uninit(void) {
 
 void SceneTitle::Update(void) {
 
-	if (GetKeyboardTrigger(DIK_RETURN))
-	{
 
+	if (!SceneEnd && GetKeyboardTrigger(DIK_RETURN))
+	{
+		FadeScreen::FadeOut(Color::white, 0.2f);
+		SceneEnd = true;
+	}
+	if (SceneEnd && FadeScreen::Finished())
+	{
 		GameManager::GetInstance()->SetScene(new SceneMainGame);
 	}
 
