@@ -20,6 +20,7 @@ void Syukka::OnCollisionEnter(Object* other) {
 	int score = 0;
 	int combo = 1;
 	int count = 0;
+	charaptr->InitDisplayCharacter();
 
 	if (other->type == ObjectType::Player) {
 		Player* player = dynamic_cast<Player*>(other);
@@ -40,7 +41,10 @@ void Syukka::OnCollisionEnter(Object* other) {
 				count = 0;
 				combo = 1;
 			}
+
+			charaptr->SetDisplayCharacter(pamyu->pamyuType);
 			pamyu = pamyu->follower;
+
 
 		}
 
@@ -48,7 +52,7 @@ void Syukka::OnCollisionEnter(Object* other) {
 		if (scoreobj != nullptr) {
 			scoreobj->AddScore(score);
 		}
-
+		charaptr->FinishSetCharacter();
 		player->Clearfollower();
 	}
 

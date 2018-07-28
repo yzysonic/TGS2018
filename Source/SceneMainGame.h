@@ -7,6 +7,8 @@
 #include "syukka.h"
 #include "Player.h"
 #include "PamyuManager.h"
+#include "CharacterDisplayer.h"
+
 
 class SceneMainGame :public Scene {
 public:
@@ -16,6 +18,7 @@ public:
 	void Update(void) override;
 
 	MainCamera * camera;
+	CharacterDisplayer * charaDisp;
 
 	Object* field;
 	ScoreObject* score;

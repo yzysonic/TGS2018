@@ -1,6 +1,7 @@
 #include "SceneMainGame.h"
 #include "SceneResult.h"
 #include "FadeScreen.h"
+#include "CharacterDisplayer.h"
 
 int SceneMainGame::gamescore;
 void SceneMainGame::Init(void) {
@@ -21,6 +22,7 @@ void SceneMainGame::Init(void) {
 	score = new ScoreObject;
 	time = new TimerObject;
 
+	charaDisp = new CharacterDisplayer;
 
 	house = new Object;
 	house->AddComponent<Billboard>("house");
@@ -47,7 +49,7 @@ void SceneMainGame::Init(void) {
 	syukka->AddComponent<SphereCollider>();
 	syukka->GetComponent<SphereCollider>()->radius = 50.f;
 	syukka->SetScorePointer(score);
-
+	syukka->charaptr = charaDisp;
 	player = new Player(Vector3::zero);
 	
 	pm = new PamyuManager(player);
@@ -62,7 +64,7 @@ void SceneMainGame::Update(void) {
 	if (time->TimerEnd()) {
 
 		gamescore = score->GetScore();
-		GameManager::GetInstance()->SetScene(new SceneResult);
+		//GameManager::GetInstance()->SetScene(new SceneResult);
 	}
 
 }
