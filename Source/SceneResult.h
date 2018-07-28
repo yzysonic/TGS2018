@@ -6,10 +6,9 @@ class SceneResult :public Scene {
 public:
 	void Init(void) override;
 	void Uninit(void) override;
-
 	void Update(void) override;
 
-
-	Object* score;
-
+private:
+	bool	next_scene;
+	Object* result;
 };
