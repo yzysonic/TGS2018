@@ -5,6 +5,7 @@
 #include "InspectorContentCamera.h"
 #include "Inspector.h"
 #include "DebugManager.h"
+#include "Pamyu.h"
 
 #pragma region SceneYangTest
 
@@ -14,7 +15,7 @@ void SceneYangTest::Init(void)
 	ModelData::Load("field");
 
 	// オブジェクト初期化
-	player	= new Player;
+	player	= new Player(Vector3(0.0f, 0.0f, 30.f));
 
 	// カメラ初期化
 	camera = new MainCamera;
@@ -39,6 +40,11 @@ void SceneYangTest::Init(void)
 	//		i++;
 	//	}
 	//}
+
+	for (int i = 0; i < 3; i++)
+	{
+		new Pamyu(Vector3(50*i, 0.0f, 0.0f), Pamyu::PamyuType::Mi);
+	}
 
 	debug	= DebugManager::GetInstance()->GetComponent<DebugMenu>();
 	DebugManager::OpenInspector(player);
