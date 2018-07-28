@@ -18,7 +18,7 @@ Camera::Camera(RenderTarget* render_target)
 	this->up = Vector3(0.0f, 1.0f, 0.0f);
 	this->aspect = (float)SystemParameters::ResolutionX / (float)SystemParameters::ResolutionY;
 	this->near_z = 10.0f;
-	this->far_z = 1000.0f;
+	this->far_z = 1000.f;
 	this->fov = Deg2Rad(60.0f);
 
 #ifdef _DEBUG
@@ -51,7 +51,9 @@ D3DXMATRIX Camera::getProjectionMatrix(bool update)
 		D3DXMatrixIdentity(&projection);
 
 		// プロジェクションマトリクスの作成
+
 		D3DXMatrixPerspectiveFovLH(&projection, fov, aspect, near_z, far_z);
+		//D3DXMatrixOrthoLH(&projection, SystemParameters::ResolutionX, SystemParameters::ResolutionY, near_z, far_z);
 	}
 
 	return projection;
