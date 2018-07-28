@@ -20,13 +20,13 @@ PamyuManager::PamyuManager(Player *pl)
 			z = Randomf(-250, 250);
 		}
 
-		new Pamyu(Vector3(x, 0, z), (Pamyu::PamyuType)(Random(0, 5)));
+		new Pamyu(Vector3(x, 0, z), LotPamyu());
 
 		numPamyu++;
 	}
 
 	// ŽžŠÔ‚ðƒZƒbƒg
-	ft.Reset(1);
+	ft.Reset(3);
 }
 
 PamyuManager::~PamyuManager()
@@ -55,7 +55,7 @@ void PamyuManager::Update(void)
 				z = Randomf(-250, 250);
 			}
 
-			new Pamyu(Vector3(x, 0, z), (Pamyu::PamyuType)(Random(0, 5)));
+			new Pamyu(Vector3(x, 0, z), LotPamyu());
 			numPamyu++;
 			//new Pamyu(Vector3(Randomf(-500, 500), 0, Randomf(-250, 250)), Pamyu::PamyuType::Mi);
 		}
@@ -65,5 +65,36 @@ void PamyuManager::Update(void)
 
 
 
+}
+
+Pamyu::PamyuType PamyuManager::LotPamyu(void)
+{
+
+	int number = Random(0, 98);
+
+	if (number < 25)
+	{
+		return Pamyu::PamyuType::Pa;
+	}
+	else if (number < 50)
+	{
+		return Pamyu::PamyuType::Mi;
+	}
+	else if (number < 75)
+	{
+		return Pamyu::PamyuType::Yu;
+	}
+	else if (number < 83)
+	{
+		return Pamyu::PamyuType::Po;
+	}
+	else if (number < 91)
+	{
+		return Pamyu::PamyuType::Mo;
+	}
+	else
+	{
+		return Pamyu::PamyuType::Yo;
+	}
 }
 
