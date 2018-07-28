@@ -467,7 +467,11 @@
     <ClCompile Include="Source\SceneResult.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ScoreObject.cpp" />
-    <ClCompile Include="Source\TimerObject.cpp" />
+    <ClCompile Include="Source\ScoreObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TimerObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

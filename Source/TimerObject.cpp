@@ -10,13 +10,21 @@ TimerObject::TimerObject() {
 	this->GetComponent<Text>()->SetFormat(DT_SINGLELINE | DT_LEFT );
 
 	score = 0;
+	frame = 0;
+	timer = 99;
 }
 
 void TimerObject::Update() {
 
-	score++;
+	
+	frame++;
+	if (frame >= 60) {
+		frame = 0;
+		timer--;
 
-	this->GetComponent<Text>()->SetText("Timer::" + std::to_string(score));
+	}
+
+	this->GetComponent<Text>()->SetText("Timer::" + std::to_string(timer));
 }
 
 void TimerObject::Uninit() {

@@ -12,4 +12,6 @@ private:
 
 
 	int score;
+	int timer;
+	int frame;
 };

@@ -33,9 +33,12 @@ void SceneMainGame::Init(void) {
 
 }
 
+
+void SceneMainGame::Update(void) {
+
+
+}
 void SceneMainGame::Uninit(void) {
 
 }
 
-void SceneMainGame::Update(void) {
-}
