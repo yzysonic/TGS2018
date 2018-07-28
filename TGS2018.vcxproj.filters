@@ -250,6 +250,9 @@
     <ClInclude Include="Source\SceneResult.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Pamyu.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ScoreObject.h">
       <Filter>GameObject</Filter>
     </ClInclude>
@@ -473,5 +476,6 @@
     <ClCompile Include="Source\TimerObject.cpp">
       <Filter>GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Pamyu.cpp" />
   </ItemGroup>
 </Project>
