@@ -36,7 +36,17 @@ void SceneMainGame::Init(void) {
 	Renderer::GetInstance()->setCamera(camera);
 	FadeScreen::FadeIn(Color::white, 0.2f);
 
-	syukka = new Object;
+	
+	//o‰×” 
+	syukka = new Syukka;
+	syukka->AddComponent<RectPolygon>("clickrange");
+	syukka->GetComponent<RectPolygon>()->SetSize(Vector2(100, 100));
+	syukka->transform.setRotation(PI / 2, 0, 0);
+	syukka->transform.position = Vector3(350.f, 0.01f, 0.f);
+
+	syukka->AddComponent<BoxCollider2D>();
+	syukka->GetComponent<BoxCollider2D>()->size = Vector2(100.f,100.f);
+	syukka->SetScorePointer(score);
 
 }
 

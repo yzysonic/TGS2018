@@ -225,6 +225,7 @@
     <ClInclude Include="Source\SceneYangTest.h" />
     <ClInclude Include="Source\ScoreObject.h" />
     <ClInclude Include="Source\Snapshot.h" />
+    <ClInclude Include="Source\syukka.h" />
     <ClInclude Include="Source\TimerObject.h" />
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +302,7 @@
     <ClCompile Include="Source\SceneYangTest.cpp" />
     <ClCompile Include="Source\ScoreObject.cpp" />
     <ClCompile Include="Source\Snapshot.cpp" />
+    <ClCompile Include="Source\syukka.cpp" />
     <ClCompile Include="Source\TimerObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -5,7 +5,7 @@
 
 #include"ScoreObject.h"
 #include "TimerObject.h"
-
+#include "syukka.h"
 class SceneMainGame :public Scene {
 public:
 	void Init(void) override;
@@ -20,7 +20,7 @@ public:
 	TimerObject* time;
 
 	Object* house;
-	Object* syukka;
+	Syukka* syukka;
 
 
 

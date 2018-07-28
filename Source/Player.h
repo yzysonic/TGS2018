@@ -9,6 +9,8 @@ class Player : public Object
 {
 public:
 	Player(Vector3 pos);
+	Pamyu * pamyu;
+
 	void Update(void) override;
 	void OnCollisionEnter(Object * other);
 
@@ -18,5 +20,5 @@ private:
 	FrameTimer animTimer;
 	Vector3 dir;
 	std::queue<Vector3> pos_history;
-	Pamyu * pamyu;
+
 };
