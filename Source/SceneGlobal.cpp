@@ -13,6 +13,13 @@ void SceneGlobal::Init(void)
 	VertexShader::Load("InstancingVS.hlsl");
 	Texture::Load("shadow");
 
+	Texture::Load("pa");
+	Texture::Load("mi");
+	Texture::Load("yu");
+	Texture::Load("po");
+	Texture::Load("mo");
+	Texture::Load("yo");
+
 	// 終了プロセスの設定
 	Game::EndProcess = [this]
 	{
